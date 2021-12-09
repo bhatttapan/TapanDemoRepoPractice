@@ -8,6 +8,6 @@ public class DemoForGitRepository {
 		System.out.println("this is example for pull event");
 		System.out.println("Hi i am reinitializing git for the second time");
 		System.out.println("second change for pull command in git");
-		System.out.println("Hello verify your project for receiving update");
+		
 	}
 }
