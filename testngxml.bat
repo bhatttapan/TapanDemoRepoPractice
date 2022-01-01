@@ -1,8 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<suite parallel="false" name="Suite">
-  <test name="Test">
-    <classes>
-      <class name="tests.LoginTest"/>
-    </classes>
-  </test> <!-- Test -->
-</suite> <!-- Suite -->
+set projectLocation=C:\TAPAN\STUDY\QUALITY ASSURANCE NIKUL SIR\Selenium_Workspace\PracticeBasicFramework3
+cd %projectLocation%
+set classpath=%projectLocation%\bin;%projectLocation%\lib\*
+java org.testng.TestNG %projectLocation%\testng.xml
+pause
