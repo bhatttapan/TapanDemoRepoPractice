@@ -6,10 +6,7 @@
       <class name="tests.LoginTest">
         <methods>
           <include name="beforeMethod"/>
-          <include name="loginWithEmptyPasswordTest"/>
           <include name="loginWithinvalidEmailTest"/>
-          <include name="loginWithWrongEmailPasswordTest"/>
-          <include name="loginWithEmptyEmailTest"/>
           <include name="afterMethod"/>
         </methods>
       </class> <!-- tests.LoginTest -->

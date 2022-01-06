@@ -7,7 +7,7 @@
         <methods>
           <include name="beforeMethod"/>
           <include name="afterMethod"/>
-          <include name="loginWithWrongEmailPasswordTest"/>
+          <include name="loginWithinvalidEmailTest"/>
         </methods>
       </class> <!-- tests.LoginTest -->
     </classes>
