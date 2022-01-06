@@ -76,6 +76,7 @@
     <target name="run" depends="compile">
         <testng classpath="${test.classpath}:${test.dest}" suitename="Suite">	
             <xmlfileset dir="${ws.home}" includes="testng.xml"/>
+        	<xmlfileset dir="${ws.home}" includes="extent-config.xml"/>
         </testng>
         <!--
         <testng classpath="${test.classpath}:${test.dest}" groups="fast">
