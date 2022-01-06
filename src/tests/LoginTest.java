@@ -14,13 +14,13 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.Assert;
-import org.testng.annotations.AfterClass;
+//import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeClass;
+//import org.testng.annotations.BeforeClass;
 
-import com.relevantcodes.extentreports.ExtentReports;
-import com.relevantcodes.extentreports.ExtentTest;
-import com.relevantcodes.extentreports.LogStatus;
+//import com.relevantcodes.extentreports.ExtentReports;
+//import com.relevantcodes.extentreports.ExtentTest;
+//import com.relevantcodes.extentreports.LogStatus;
 
 
 public class LoginTest {
@@ -29,16 +29,11 @@ public class LoginTest {
 	LoginPage lp = new LoginPage();
 	DataFile df = new DataFile();
 	
-	static ExtentTest test;
-	static ExtentReports report;
+	//static ExtentTest test;
+	//static ExtentReports report;
 	
 	
-	@BeforeClass
-	public static void startTest()
-	{
-	report = new ExtentReports(System.getProperty("user.dir")+"/ExtentReport-output/ExtentReportResults.html", true);
-	test = report.startTest("ExtentDemo");
-	}
+	
 	
   
   @BeforeMethod
@@ -60,14 +55,7 @@ public class LoginTest {
   public void loginWithWrongEmailPasswordTest() throws InterruptedException 
   {
 	    lp.logIn(df.wrongEmail,df.wrongPassword);
-		if(lp.readGlobalErr().equals(df.globalErrMsg))
-		{
-			test.log(LogStatus.PASS, "TEST-PASS","Navigated to the specified URL");
-		}
-		else
-		{
-		test.log(LogStatus.FAIL, "Test Failed");
-		}
+		Assert.assertEquals(lp.readGlobalErr(), df.globalErrMsg);
   }
   
   @Test (priority=2)
@@ -88,20 +76,8 @@ public class LoginTest {
   public void loginWithinvalidEmailTest() throws InterruptedException
   {
 	    lp.logIn(df.invalidEmail,df.wrongPassword);
-		if(lp.readLocalErr().equals(df.invalidEmailErrMsg))
-				{
-			      test.log(LogStatus.PASS,"TEST-PASS", "Navigated to the specified URL");
-				}
-		else
-		{
-		test.log(LogStatus.FAIL, "Test Failed");
-		}
+		Assert.assertEquals(lp.readLocalErr(), df.invalidEmailErrMsg);
   }
   
-  @AfterClass
-  public static void endTest()
-  {
-  report.endTest(test);
-  report.flush();
-  }
+  
 }
